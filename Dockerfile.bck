@@ -1,0 +1,14 @@
+#Getting the docker image from the repo
+FROM openjdk:21-jdk-alpine
+
+#Creating a working directory where the code will be stored
+WORKDIR /app
+
+#Copy the source code from Host machine to the working directry
+COPY src/Main.java /app/Main.java
+
+#Compile the code
+RUN javac Main.java
+
+#run the application
+CMD ["java","Main"]
